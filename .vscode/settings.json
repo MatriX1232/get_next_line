@@ -1,0 +1,10 @@
+{
+	"files.associations": {
+		"get_next_line.h": "c",
+		"stddef.h": "c",
+		"stdio.h": "c",
+		"unistd.h": "c"
+	},
+	"editor.smoothScrolling": true,
+	"editor.cursorSmoothCaretAnimation": "on"
+}

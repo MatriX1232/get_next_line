@@ -1,5 +1,7 @@
 This is first line$
 Second line :)$
 $
+
+
 PREVIOUS WAS EMPTY line$
 a$

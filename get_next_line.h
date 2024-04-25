@@ -6,12 +6,16 @@
 /*   By: msolinsk <msolinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:58:53 by msolinsk          #+#    #+#             */
-/*   Updated: 2024/04/22 14:49:56 by msolinsk         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:15:11 by msolinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 40
+#endif
 
 # include <stdlib.h>
 # include <unistd.h>

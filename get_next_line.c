@@ -6,17 +6,13 @@
 /*   By: msolinsk <msolinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 22:01:29 by msolinsk          #+#    #+#             */
-/*   Updated: 2024/04/22 16:41:50 by msolinsk         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:16:29 by msolinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stddef.h>
 #include <stdio.h>
-
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 40
-#endif
 
 char	*ft_transfer(char *base, char *addition)
 {
@@ -35,14 +31,15 @@ char	*ft_move_offset(char *buffer)
 	int		i;
 	char	*new;
 
+	if (*buffer == '\0')
+	{
+		free(buffer);
+		return (NULL);
+	}
 	index = 0;
 	while (buffer[index] && buffer[index] != '\n')
 		index++;
-	printf("SIZE = %ld | index = %d | char = %c | <%s>\n", ft_strlen(buffer) - index + 1, index, buffer[index], buffer);
 	new = ft_calloc(ft_strlen(buffer) - index + 1, sizeof(char));
-	// printf("ft_strlen = %ld\n", ft_strlen(buffer));
-	// printf("index = %d\n", index);
-	// printf("<buffer = %s>\n\n", buffer);
 	if (!new)
 		return (NULL);
 	index++;
@@ -53,7 +50,6 @@ char	*ft_move_offset(char *buffer)
 		i++;
 	}
 	new[i] = '\0';
-	// printf("<<NEW=%s>>", new);
 	free(buffer);
 	return (new);
 }
@@ -67,17 +63,23 @@ char	*ft_extract_line(char *buffer)
 	index = 0;
 	while (buffer[index] && buffer[index] != '\n')
 		index++;
-	line = ft_calloc(index + 1, sizeof(char));
+	line = ft_calloc(index + 2, sizeof(char));
 	if (!line)
 		return (NULL);
 	i = 0;
-	while (i <= index)
+	while (i < index && buffer[i])
 	{
 		line[i] = buffer[i];
 		i++;
 	}
+	if (buffer[index] == '\n')
+		line[i++] = '\n';
 	line[i] = '\0';
-	// printf("<LINE=%s>", line);
+	if (*line == '\0')
+	{
+		free(line);
+		return (NULL);
+	}
 	return (line);
 }
 

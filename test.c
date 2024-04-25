@@ -6,7 +6,7 @@
 /*   By: msolinsk <msolinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 23:03:39 by msolinsk          #+#    #+#             */
-/*   Updated: 2024/04/22 14:58:29 by msolinsk         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:22:01 by msolinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	main(void)
 	free(line);
 
 	line = get_next_line(fd);
-	if (line == NULL)
-		printf("NULL\n");
+	// if (line == NULL)
+	// 	printf("NULL\n");
 	printf("%s", line);
 	free(line);
 

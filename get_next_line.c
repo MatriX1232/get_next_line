@@ -6,13 +6,11 @@
 /*   By: msolinsk <msolinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 22:01:29 by msolinsk          #+#    #+#             */
-/*   Updated: 2024/04/25 15:16:29 by msolinsk         ###   ########.fr       */
+/*   Updated: 2024/05/08 17:16:39 by msolinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stddef.h>
-#include <stdio.h>
 
 char	*ft_transfer(char *base, char *addition)
 {

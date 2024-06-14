@@ -6,7 +6,7 @@
 /*   By: msolinsk <msolinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 18:02:50 by msolinsk          #+#    #+#             */
-/*   Updated: 2024/05/08 17:21:12 by msolinsk         ###   ########.fr       */
+/*   Updated: 2024/06/14 18:42:49 by msolinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,38 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	i;
+	char	*str;
+
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (malloc(1));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	str = malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s[start + i];
+		i++;
+	}
+	str[i] = 0;
+	return (str);
+}
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void			*array;
 	unsigned char	*p;
 	int				n;
 
-	if ((int)(nmemb * size) > 2147483647 || (int)(nmemb * size) < -2147483648)
-		return (NULL);
+	// if ((int)(nmemb * size) > 2147483647 || (int)(nmemb * size) < -2147483648)
+	// 	return (NULL);
 	array = (void *) malloc(size * nmemb);
 	if (!array)
 		return (NULL);

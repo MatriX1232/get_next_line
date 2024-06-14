@@ -6,7 +6,7 @@
 /*   By: msolinsk <msolinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 18:02:50 by msolinsk          #+#    #+#             */
-/*   Updated: 2024/06/14 18:42:49 by msolinsk         ###   ########.fr       */
+/*   Updated: 2024/06/14 19:04:00 by msolinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	unsigned char	*p;
 	int				n;
 
-	// if ((int)(nmemb * size) > 2147483647 || (int)(nmemb * size) < -2147483648)
-	// 	return (NULL);
+	if ((int)(nmemb * size) > 2147483647 || (int)(nmemb * size) < -2147483648)
+		return (NULL);
 	array = (void *) malloc(size * nmemb);
 	if (!array)
 		return (NULL);
